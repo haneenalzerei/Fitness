@@ -13,8 +13,7 @@ namespace Fitness.Controllers
     {
         private readonly ModelContext _context;
 
-        [TempData]
-        public decimal UserID { get; set; }
+       
 
         public FitnessUserLoginsController(ModelContext context)
         {
@@ -165,7 +164,7 @@ namespace Fitness.Controllers
             var user = _context.FitnessUserLogins.Where(x => x.Password == fitnessUserLogin.Password && x.Username == fitnessUserLogin.Username).SingleOrDefault();
             if (user != null)
             {
-                UserID = (decimal)fitnessUserLogin.Userid;
+               // UserID = (decimal)fitnessUserLogin.Userid;
                 return RedirectToAction("Index", "UserDashboard");
 
             }

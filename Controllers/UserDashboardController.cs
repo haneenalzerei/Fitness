@@ -21,7 +21,7 @@ namespace Fitness.Controllers
         // GET: UserDashboard
         public async Task<IActionResult> Index()
         {
-            var x = TempData["UserID"];
+         //   var x = TempData["UserID"];
             var fitnessDietInformation = await _context.FitnessUserDiets
                .FirstOrDefaultAsync(m => m.Userid == 1);
            
@@ -61,7 +61,7 @@ namespace Fitness.Controllers
         {
             if (ModelState.IsValid)
             {
-                fitnessUserInformation.Userinformationid = 1;
+                fitnessUserInformation.Userinformationid = 2;
                 fitnessUserInformation.Userid = 1;
                 _context.Add(fitnessUserInformation);
                 var fitnessDietInformation = await _context.FitnessDietInformations
@@ -69,7 +69,7 @@ namespace Fitness.Controllers
                 if (fitnessDietInformation != null)
                 {
                     FitnessUserDiet fitnessUserDiet = new FitnessUserDiet();
-                    fitnessUserDiet.Id = 1;
+                    fitnessUserDiet.Id = 2;
                     fitnessUserDiet.Userid = 1;
                     fitnessUserDiet.Diettext = fitnessDietInformation.Diettext;
 
