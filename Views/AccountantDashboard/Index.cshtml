@@ -1,0 +1,54 @@
+﻿@model List<Fitness.Models.Test>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/Dashboard_Layout.cshtml";
+}
+<br />
+<br />
+<br />
+<br />
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                User ID
+            </th>
+            <th>
+                Full Name
+            </th>
+
+            <th>
+                Email
+            </th>
+            <th>
+                Diet Text
+            </th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var i in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => i.Userid)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => i.Fullname)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => i.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => i.Diettext)
+                </td>
+
+
+            </tr>
+        }
+    </tbody>
+</table>
+
+

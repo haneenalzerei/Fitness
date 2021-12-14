@@ -1,0 +1,70 @@
+﻿@model Fitness.Models.FitnessUserDiet
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/Dashboard_Layout.cshtml";
+}
+<br /><br /><br /><br /><br />
+            <div class="container-fluid">
+                <p>
+                    <a onclick="$('#modal').modal('show')" class="btn btn-primary">Create New Diet</a>
+                </p>
+
+                <div class="modal" tabindex="-1" role="dialog" id="modal">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Generate new diet system </h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+
+                                <form method="post" asp-action="CreateDiet">
+                                    <div class="form-group">
+                                        <label for="wieght">Wieght</label>
+                                        <input type="number" class="form-control" id="wieght" name="Weight">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="hieght">Hieght</label>
+                                        <input type="number" class="form-control" id="hieght" name="Height">
+                                    </div>
+                                    <br />
+
+                                    <button type="submit" class="btn btn-primary">Generate</button>
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Userid)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Diettext)
+                            </th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => Model.Userid)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => Model.Diettext)
+                            </td>
+
+
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>

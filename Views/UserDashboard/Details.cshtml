@@ -1,0 +1,37 @@
+﻿@model Fitness.Models.FitnessDietInformation
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/Dashboard_Layout.cshtml";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>FitnessDietInformation</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Diettext)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Diettext)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Maxheight)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Maxheight)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Maxweight)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Maxweight)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Dietid">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
